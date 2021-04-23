@@ -1,0 +1,65 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #757f9a 0%, #d7dde8 51%, #757f9a 100%);
+  z-index: 1;
+  margin: 10px;
+
+  padding: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  max-height: 400px;
+  min-width: 100px;
+  border-radius: 20px;
+}
+
+.product > img {
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.product > button {
+  background-image: linear-gradient(
+    to right,
+    #ff8008 0%,
+    #ffc837 51%,
+    #ff8008 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.product > button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.product_info {
+  height: 100px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+.product_price {
+  position: relative;
+  top: 10px;
+}
+
+.huge {
+  font-size: 1.5rem;
+  top: 30px;
+  position: relative;
+}
