@@ -37,14 +37,14 @@ function Home() {
           </div>
           <div className="home_row">
             <Product
-              id={3}
+              id={4}
               title="Brain"
               img="https://api.time.com/wp-content/uploads/2014/05/brain.jpg?w=800&quality=85"
               price={99.99}
               rating={5}
             />
             <Product
-              id={4}
+              id={5}
               title="Cart"
               img="https://icon-library.com/images/consumer-goods-icon/consumer-goods-icon-9.jpg"
               price={19.99}
@@ -53,21 +53,21 @@ function Home() {
           </div>
           <div className="home_row">
             <Product
-              id={5}
+              id={6}
               title="Kindess"
               img="https://thumbs.dreamstime.com/z/vector-hand-holds-heart-care-kindness-charity-donation-flat-color-line-icon-vector-hand-holds-heart-care-kindness-charity-donation-159309130.jpg"
               price={0.0}
               rating={4}
             />
             <Product
-              id={6}
+              id={7}
               title="Honesty"
               img="https://www.wardfamilylawgroup.com/wp-content/uploads/2018/08/Post_83118_Featured-900x400.jpg"
               price={0.0}
               rating={5}
             />
             <Product
-              id={7}
+              id={8}
               title="Dumbells"
               img="https://www.amazon.ca/images/I/61eRzgL1PlL._AC_SL1200_.jpg"
               price={29.99}
@@ -76,14 +76,14 @@ function Home() {
           </div>
           <div className="home_row">
             <Product
-              id={8}
+              id={9}
               title="Airbus Z1720"
               img="https://wallpapercave.com/wp/wp4128843.jpg"
               price={199999.99}
               rating={5}
             />
             <Product
-              id={9}
+              id={10}
               title="Helicopter X820"
               img="https://www.helicopter-industry.com/wp-content/uploads/2021/01/H160-ANH-1280x640.jpg"
               price={540000}

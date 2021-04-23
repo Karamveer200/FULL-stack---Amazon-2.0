@@ -1,0 +1,55 @@
+.checkout_product {
+  display: flex;
+  flex-direction: row;
+
+  height: 400px;
+  padding: 30px;
+  width: 600px;
+  background: linear-gradient(to right, #e0eafc 0%, #cfdef3 51%, #e0eafc 100%);
+  z-index: -1;
+  margin: 25px;
+  border-radius: 10px;
+}
+
+.fit_image > img {
+  margin-bottom: 15px;
+  right: 12%;
+  position: absolute;
+  height: 90%;
+  object-fit: contain;
+  width: 90%;
+}
+
+.fit_image {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+  margin-left: 10px;
+}
+.checkout_product_info {
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 1.3rem;
+}
+
+.remove_btn {
+  background-image: linear-gradient(
+    to right,
+    #ff8008 0%,
+    #ffc837 51%,
+    #ff8008 100%
+  );
+  margin: 10px;
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  font-size: 1rem;
+  margin-top: 65px;
+  width: 150px;
+}
