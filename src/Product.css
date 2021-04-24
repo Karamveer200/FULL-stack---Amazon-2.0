@@ -3,7 +3,7 @@
   flex-direction: column;
   background: linear-gradient(to right, #757f9a 0%, #d7dde8 51%, #757f9a 100%);
   z-index: 1;
-  margin: 10px;
+  margin: 15px;
 
   padding: 20px;
   width: 100%;
@@ -12,8 +12,14 @@
   max-height: 400px;
   min-width: 100px;
   border-radius: 20px;
+  transition: transform 0.2s;
+  border: 3px solid;
+  border-color: rgb(25, 103, 155);
 }
 
+.product:hover {
+  transform: scale(1.1);
+}
 .product > img {
   max-height: 200px;
   object-fit: contain;
@@ -44,6 +50,15 @@
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+
+.product > button:active {
+  background-image: linear-gradient(
+    to right,
+    #dbdf0c 0%,
+    #e71212 51%,
+    #ffbd08 100%
+  );
 }
 
 .product_info {

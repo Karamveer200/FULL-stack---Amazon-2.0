@@ -18,8 +18,26 @@
   background: transparent;
   z-index: 3;
   left: 20%;
-
   position: relative;
+}
+
+@media (max-width: 1200px) {
+  .dance > img {
+    display: none;
+  }
+
+  .home_row_parent {
+    position: relative;
+    bottom: 0px;
+    margin-top: 450px;
+  }
+}
+.dance {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-left: 10px;
 }
 .home_row {
   display: flex;
@@ -31,4 +49,6 @@
 .home_row_parent {
   position: relative;
   bottom: 770px;
+  margin-right: 50px;
+  margin-left: 50px;
 }

@@ -9,7 +9,7 @@ function Checkout() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   useEffect(() => {
     topFunction();
@@ -33,7 +33,9 @@ function Checkout() {
       <div className="bottomcontent">
         <div className="checkout_title">
           <h1>
-            <strong>Your shopping cart -</strong>
+            <strong>Hello {user?.email}</strong>
+            <br />
+            Your shopping cart -
           </h1>
         </div>
         <div className="checkout_items_list">

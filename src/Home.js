@@ -15,7 +15,10 @@ function Home() {
   return (
     <div className="home">
       <div className="home_container">
-        <img className="danceImg" src="/happy.png" alt="" />
+        <div className="dance">
+          <img className="danceImg" src="/happy.png" alt="" />
+        </div>
+
         <img
           className="home_img"
           src="https://img.wallpapersafari.com/desktop/1920/1080/25/82/1x7cEQ.jpg"
