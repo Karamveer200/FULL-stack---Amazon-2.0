@@ -1,22 +1,55 @@
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
+import Login from "./Login";
 import Checkout from "./Checkout";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
+import { auth } from "./Firebase";
+import { useStateValue } from "./StateProvider";
 
 function App() {
+  const [{}, dispatch] = useStateValue();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      console.log("USER-", authUser);
+
+      if (authUser) {
+        //User is logged in
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        //User is logged out
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+  }, []);
   return (
     <Router>
-      <Header />
       <Switch>
         <Fragment>
           <div className="app">
             <Route
               exact
+              path="/login"
+              render={() => (
+                <Fragment>
+                  <Login />
+                </Fragment>
+              )}
+            />
+            <Route
+              exact
               path="/checkout"
               render={() => (
                 <Fragment>
+                  <Header />
                   <Checkout />
                 </Fragment>
               )}
@@ -27,6 +60,7 @@ function App() {
               path="/"
               render={() => (
                 <Fragment>
+                  <Header />
                   <Home />
                 </Fragment>
               )}

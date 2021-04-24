@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Checkout.css";
 import Subtotal from "./Subtotal";
 import CheckoutProduct from "./CheckoutProduct";
 import { useStateValue } from "./StateProvider";
 
 function Checkout() {
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
   const [{ basket }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    topFunction();
+  }, []);
+
   return (
     <div className="checkout">
       <div className="flex_items">
@@ -15,11 +24,13 @@ function Checkout() {
           src="https://marketplace.canva.com/EADan5rkVhc/2/0/1600w/canva-short-haircut-photo-banner-email-header-EVNXplwrork.jpg"
         />
         <div className="subtotal">
-          <Subtotal />
+          <div className="fix">
+            <Subtotal />
+          </div>
         </div>
       </div>
+      <hr />
       <div className="bottomcontent">
-        <hr />
         <div className="checkout_title">
           <h1>
             <strong>Your shopping cart -</strong>

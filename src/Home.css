@@ -1,18 +1,26 @@
 .home_img {
   width: 100%;
-  z-index: -1;
-  margin-bottom: -150px;
-
+  z-index: 1;
+  position: relative;
+  bottom: 490px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .home {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
 }
 
+.danceImg {
+  background: transparent;
+  z-index: 3;
+  left: 20%;
+
+  position: relative;
+}
 .home_row {
   display: flex;
   z-index: 1;
@@ -22,5 +30,5 @@
 
 .home_row_parent {
   position: relative;
-  bottom: 200px;
+  bottom: 770px;
 }
