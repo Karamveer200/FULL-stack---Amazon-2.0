@@ -7,7 +7,7 @@ import { useStateValue } from "./StateProvider";
 import { auth } from "./Firebase";
 
 function Header() {
-  const [state, dispatch] = useStateValue();
+  const [state] = useStateValue();
 
   const handleAuth = () => {
     if (state.user) {
@@ -30,18 +30,22 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        <Link to={!state.user && "/login"}>
+        <Link to={state.user ? "" : "/login"}>
           <div className="header__option" onClick={handleAuth}>
-            <span className="header__optionOne hide-sm">Hello Guest</span>
+            <span className="header__optionOne hide-sm">
+              Hello {state.user ? state.user.email : "Guest"}
+            </span>
             <span className="header__optionTwo">
               {state.user ? "Sign Out" : "Sign In"}
             </span>
           </div>
         </Link>
-        <div className="header__option">
-          <span className="header__optionOne hide-sm">Returns</span>
-          <span className="header__optionTwo">Orders</span>
-        </div>
+        <Link to="/orders">
+          <div className="header__option">
+            <span className="header__optionOne hide-sm">Returns</span>
+            <span className="header__optionTwo">Orders</span>
+          </div>
+        </Link>
         <div className="header__option">
           <span className="header__optionOne hide-sm">Your</span>
           <span className="header__optionTwo">Prime</span>

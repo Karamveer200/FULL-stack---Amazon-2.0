@@ -1,0 +1,58 @@
+.payment_address_p {
+  font-family: "Nunito", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.payment_price_container > button {
+  padding: 7px 20px;
+  border-radius: 7px;
+  background: #393e46;
+  color: white;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.payment_details > form {
+  max-width: 400px;
+}
+
+.cardelement {
+  color: white;
+  background-color: white;
+  padding: 20px;
+  border-radius: 7px;
+}
+.payment_price_container > h3 {
+  margin: 20px 0;
+}
+.payment_container > h1 {
+  text-align: center;
+  padding: 20px;
+  font-weight: 400;
+  border-bottom: 2px lightgray solid;
+  color: white;
+  background: #325288;
+}
+
+.payment_container > h1 > a {
+  text-decoration: none;
+  color: white;
+}
+
+.payment_section {
+  display: flex;
+  border-bottom: 2px lightgray solid;
+  padding: 20px;
+  margin: 0 20px;
+}
+
+.payment_title {
+  flex: 0.2;
+}
+
+.payment_address,
+.payment_items,
+.payment_details {
+  flex: 0.8;
+}

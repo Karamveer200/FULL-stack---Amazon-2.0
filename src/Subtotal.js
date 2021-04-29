@@ -3,9 +3,10 @@ import "./Subtotal.css";
 import { useStateValue } from "./StateProvider";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
+import { Link } from "react-router-dom";
 
 function Subtotal() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   return (
     <div className="subtotalcomp">
@@ -27,7 +28,9 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button className="checkout_btn">Checkout</button>
+      <Link to="/payment">
+        <button className="checkout_btn">Checkout</button>
+      </Link>
     </div>
   );
 }

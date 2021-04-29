@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
+import { Alert } from "react-context-alerts";
 
 function Product({ id, title, price, rating, img }) {
-  const [{ basket }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
+  const [open, setOpen] = useState(false);
 
   const addToBasket = () => {
     //Dispatch the action
@@ -17,6 +19,10 @@ function Product({ id, title, price, rating, img }) {
         price: price,
       },
     });
+    setOpen(true);
+    setTimeout(function () {
+      setOpen(false);
+    }, 3000);
   };
 
   return (
@@ -36,6 +42,7 @@ function Product({ id, title, price, rating, img }) {
       </div>
       <img src={img} alt=""></img>
       <button onClick={addToBasket}>Add to Cart</button>
+      <Alert open={open} message={"Added - " + title} />
     </div>
   );
 }

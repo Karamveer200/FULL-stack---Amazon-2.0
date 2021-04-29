@@ -1,6 +1,8 @@
 export const initialState = {
   basket: [],
   user: null,
+  msg: [],
+  delievryAdress: [],
 };
 
 //Selector
@@ -21,7 +23,7 @@ const reducer = (state, action) => {
       if (index >= 0) {
         tempBasket.splice(index, 1);
       } else {
-        console.warn("Can't remove product with id - ${action.id}");
+        console.warn(`Can't remove product with id - ${action.id}`);
       }
       return {
         ...state,
@@ -32,6 +34,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         user: action.user,
+      };
+
+    case "EMPTY_BASKET":
+      return {
+        ...state,
+        basket: [],
       };
     default:
   }

@@ -1,17 +1,47 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer";
+import {
+  AlertsProvider,
+  createRcaTheme,
+  createRcaSettings,
+} from "react-context-alerts";
+
+//Alert thems
+const rcaTheme = createRcaTheme({
+  info: {
+    body: {
+      background: "#fff",
+      color: "black",
+    },
+  },
+});
+
+const rcaSettings = createRcaSettings({
+  showCloseButton: true,
+  info: {
+    showProgressBar: true,
+    timeout: 1300,
+  },
+  error: {
+    enableClickAwayListener: true,
+    showProgressBar: true,
+    timeout: 1300,
+  },
+});
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Fragment>
     <StateProvider initialState={initialState} reducer={reducer}>
-      <App />
+      <AlertsProvider theme={rcaTheme} settings={rcaSettings}>
+        <App />
+      </AlertsProvider>
     </StateProvider>
-  </React.StrictMode>,
+  </Fragment>,
   document.getElementById("root")
 );
 

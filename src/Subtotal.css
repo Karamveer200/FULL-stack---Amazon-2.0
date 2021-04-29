@@ -1,13 +1,18 @@
 .subtotalcomp {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   padding: 20px;
   position: fixed;
 }
 
+@media (max-width: 950px) {
+  .subtotalcomp {
+    position: relative;
+  }
+}
 .checkout_btn {
-  margin-top: 35px;
+  margin-top: 55px;
   background-image: linear-gradient(
     to right,
     #ff8008 0%,
@@ -20,7 +25,8 @@
 
 .subtotal_gift {
   display: flex;
-  align-items: center;
+  left: 20px;
+  position: relative;
 }
 
 .subtotal_gift > input {

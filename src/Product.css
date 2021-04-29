@@ -1,7 +1,7 @@
 .product {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to right, #757f9a 0%, #d7dde8 51%, #757f9a 100%);
+  background-color: #eff8ff;
   z-index: 1;
   margin: 15px;
 
@@ -11,14 +11,19 @@
   justify-content: flex-end;
   max-height: 400px;
   min-width: 100px;
-  border-radius: 20px;
-  transition: transform 0.2s;
+  border-radius: 2px;
   border: 3px solid;
   border-color: rgb(25, 103, 155);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.upperindex {
+  z-index: 99999999;
 }
 
 .product:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgb(0 0 0);
 }
 .product > img {
   max-height: 200px;
@@ -35,15 +40,13 @@
     #ff8008 100%
   );
   margin: 10px;
-  padding: 15px 45px;
+  padding: 10px 35px;
   text-align: center;
-  text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
-  display: block;
 }
 
 .product > button:hover {

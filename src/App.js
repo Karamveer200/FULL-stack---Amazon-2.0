@@ -3,13 +3,23 @@ import Header from "./Header";
 import Home from "./Home";
 import Login from "./Login";
 import Checkout from "./Checkout";
+import Payment from "./Payment";
+import Orders from "./Orders";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { auth } from "./Firebase";
 import { useStateValue } from "./StateProvider";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
+
+  const [stripePromise, setStripePromise] = useState(() =>
+    loadStripe(
+      "pk_test_51IklrCFsqeN1fp75EedHyiucreH9z2TGKMW08VMuEEGjQkmrNcrdygQ3K4cATjjA5KgJscGdBOZgfxpUNWEWJ9Vy00SkQpmSuD"
+    )
+  );
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -29,7 +39,7 @@ function App() {
         });
       }
     });
-  }, []);
+  }, [dispatch]);
   return (
     <Router>
       <Switch>
@@ -46,6 +56,16 @@ function App() {
             />
             <Route
               exact
+              path="/orders"
+              render={() => (
+                <Fragment>
+                  <Header />
+                  <Orders />
+                </Fragment>
+              )}
+            />
+            <Route
+              exact
               path="/checkout"
               render={() => (
                 <Fragment>
@@ -54,7 +74,18 @@ function App() {
                 </Fragment>
               )}
             />
-
+            <Route
+              exact
+              path="/payment"
+              render={() => (
+                <Fragment>
+                  <Header />
+                  <Elements stripe={stripePromise}>
+                    <Payment />
+                  </Elements>
+                </Fragment>
+              )}
+            />
             <Route
               exact
               path="/"

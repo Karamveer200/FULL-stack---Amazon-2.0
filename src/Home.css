@@ -1,8 +1,7 @@
 .home_img {
   width: 100%;
-  z-index: 1;
-  position: relative;
-  bottom: 490px;
+  z-index: -1;
+  margin-bottom: 0px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
@@ -12,43 +11,18 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-}
-
-.danceImg {
-  background: transparent;
-  z-index: 3;
-  left: 20%;
-  position: relative;
+  max-width: 1470px;
 }
 
 @media (max-width: 1200px) {
   .dance > img {
     display: none;
   }
-
-  .home_row_parent {
-    position: relative;
-    bottom: 0px;
-    margin-top: 450px;
-  }
-}
-.dance {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  margin-left: 10px;
 }
 .home_row {
   display: flex;
-  z-index: 1;
+  position: relative;
+  bottom: 150px;
   margin-left: 5px;
   margin-right: 5px;
-}
-
-.home_row_parent {
-  position: relative;
-  bottom: 770px;
-  margin-right: 50px;
-  margin-left: 50px;
 }

@@ -13,7 +13,7 @@
 .checkout_title {
   font-family: "Alegreya Sans SC", sans-serif;
   font-size: 1.3rem;
-  background: -webkit-linear-gradient(rgb(230, 166, 70), rgb(215, 230, 7));
+  background: black;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -32,10 +32,6 @@ hr {
 }
 
 .subtotal {
-  width: 34%;
-  height: 300px;
-  padding: 20px;
-  position: relative;
 }
 
 .fix {
@@ -48,35 +44,56 @@ hr {
 
 .bottomcontent {
   position: relative;
+  display: flex;
+  flex-direction: row;
   margin-left: 20px;
   max-width: 76%;
 }
-
-@media (max-width: 1079px) {
-  .checkout_ad {
-    width: 70%;
-  }
+.products_list {
+  align-content: flex-start;
+  flex: 0.9;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
   .hide-sm {
     display: none;
   }
   hr {
-    margin-top: 80px;
+    margin-top: 350px;
   }
   .subtotal {
-    width: 100%;
-    height: 200px;
+    position: relative;
+    bottom: 420px;
+    left: 100px;
+    flex: 0.5;
+  }
+  .checkout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bottomcontent {
+    flex-direction: column;
+    flex: 1;
   }
   .fix {
-    position: relative;
-    width: 60%;
-    height: 200px;
-    border-radius: 8px;
+    width: 50%;
   }
-  .bottomcontent {
-    max-width: 100%;
-    bottom: 0px;
+
+  .subtotalscomp {
+    position: relative;
+  }
+}
+
+@media (max-width: 750px) {
+  .subtotal {
+    bottom: 480px;
+  }
+}
+
+@media (max-width: 475px) {
+  .subtotal {
+    bottom: 530px;
+    left: 90px;
   }
 }
