@@ -4,9 +4,17 @@ import "firebase/auth";
 import "firebase/database";
 import "firebase/firestore";
 
+
 const firebaseConfig = {
- 
-};
-firebase.initializeApp(firebaseConfig);
-export const db = firebase.firestore();
-export const auth = firebase.auth();
+    apiKey: "AIzaSyAYiKtplrknBT271EiQyTXo1HsaAUoVUeo",
+    authDomain: "clone-bbc95.firebaseapp.com",
+    projectId: "clone-bbc95",
+    storageBucket: "clone-bbc95.appspot.com",
+    messagingSenderId: "890759298759",
+    appId: "1:890759298759:web:0505ec0c4738ca71adc8e2",
+    measurementId: "G-GL23KX5LSH",
+  };
+  firebase.initializeApp(firebaseConfig);
+  export const db = firebase.firestore();
+  export const auth = firebase.auth();
+  
